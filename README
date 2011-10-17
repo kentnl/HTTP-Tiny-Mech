@@ -3,7 +3,7 @@ NAME
     compatible interface.
 
 VERSION
-    version 0.1.0
+    version 0.1.1
 
 SYNOPSIS
       # Get something that expects an HTTP::Tiny instance
@@ -26,8 +26,8 @@ DESCRIPTION
     This code is somewhat poorly documented, and highly experimental.
 
     Its the result of a quick bit of hacking to get MetaCPAN::API working
-    faster via the WWW::Mechanize::Cached module (Â and gaining cache
-    persistence via CHIÂ )
+    faster via the WWW::Mechanize::Cached module ( and gaining cache
+    persistence via CHI )
 
     It works so far for this purpose.
 

@@ -1,5 +1,9 @@
 Release history for HTTP-Tiny-Mech
 
+0.1.1 2011-10-17T03:48:43Z
+ [Packaging]
+ - Bloody UTF8 Encoding.
+
 0.1.0 2011-10-17T03:44:31Z
  - First version.
 
