@@ -1,6 +1,8 @@
 Release history for HTTP-Tiny-Mech
 
 {{$NEXT}}
+
+0.1.2 2011-10-17T09:42:07Z
  [Internals]
  - Query the Request Object for success code instead of passing 1.
 
