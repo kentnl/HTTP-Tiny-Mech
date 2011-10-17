@@ -6,7 +6,7 @@ BEGIN {
   $HTTP::Tiny::Mech::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $HTTP::Tiny::Mech::VERSION = '0.1.1';
+  $HTTP::Tiny::Mech::VERSION = '0.1.2';
 }
 
 # ABSTRACT: Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible interface.
@@ -33,7 +33,7 @@ sub _unwrap_response {
     status  => $response->code,
     reason  => $response->message,
     headers => $response->headers,
-    success => 1,
+    success => $response->is_success,
     content => $response->content,
   };
 }
@@ -77,7 +77,7 @@ HTTP::Tiny::Mech - Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible in
 
 =head1 VERSION
 
-version 0.1.1
+version 0.1.2
 
 =head1 SYNOPSIS
 

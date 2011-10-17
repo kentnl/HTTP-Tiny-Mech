@@ -20,7 +20,7 @@ my %module_build_args = (
     "Kent Fredric <kentnl\@cpan.org>"
   ],
   "dist_name" => "HTTP-Tiny-Mech",
-  "dist_version" => "0.1.1",
+  "dist_version" => "0.1.2",
   "license" => "perl",
   "module_name" => "HTTP::Tiny::Mech",
   "recommends" => {},
