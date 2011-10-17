@@ -60,7 +60,7 @@ sub _unwrap_response {
     status  => $response->code,
     reason  => $response->message,
     headers => $response->headers,
-    success => 1,
+    success => $response->is_success,
     content => $response->content,
   };
 }
