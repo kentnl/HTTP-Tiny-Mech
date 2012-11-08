@@ -84,7 +84,7 @@ Interface should be the same as it is with L<HTTP::Tiny/get>.
 
 sub get {
   my ( $self, $uri, $opts ) = @_;
-  return $self->_unwrap_response( $self->mechua->get( $uri, ($opts? %$opts : ()) ) );
+  return $self->_unwrap_response( $self->mechua->get( $uri, ($opts? %{$opts} : ()) ) );
 }
 
 =head2 request
