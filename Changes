@@ -1,6 +1,43 @@
 Release history for HTTP-Tiny-Mech
 
 {{$NEXT}}
+ [Bugs]
+ - Resolves github #1 "Adjust get() to bridge HTTP::Tiny and WWW::Mechanize
+   APIs", reported by Pedro Melo, with fix by Pedro Melo.
+ - Resolves RT#80674 , essentially github #1, reported by Diogo Franco
+
+ [Dependencies::Added::Develop::Requires]
+ - Pod::Coverage::TrustPod
+ - Test::CPAN::Meta
+ - Test::Pod 1.41
+ - Test::Pod::Coverage 1.08
+ - version 0.9901
+
+ [Dependencies::Added::Runtime::Requires]
+ - perl 5.006
+
+ [Dependencies::Changed::Build::Requires]
+ - Module::Build 0.3601 -> 0.4003
+
+ [Dependencies::Changed::Configure::Requires]
+ - Module::Build 0.3601 -> 0.4003
+
+ [Dependencies::Changed::Develop::Recommends]
+ - Dist::Zilla::PluginBundle::Author::KENTNL::Lite 0.01009803 -> v1.3.0
+
+ [Dependencies::Changed::Develop::Suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.0.0 -> v1.5.1
+
+ [Dependencies::Changed::Test::Requires]
+ - Test::More 0.88 -> 0.98
+
+ [Documentation]
+ - Added Pedro Melo to author list
+
+ [Tests]
+ - regenerated t/00-compile.t
+ - regenerated t/000-report-versions-tiny.t
+ - added xt/release/minimum-version.t
 
 0.1.2 2011-10-17T09:42:07Z
  [Internals]
