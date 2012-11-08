@@ -32,7 +32,7 @@ my %module_build_args = (
     "Moose" => 0,
     "MooseX::NonMoose" => 0,
     "WWW::Mechanize" => 0,
-    "perl" => "v5.10.0",
+    "perl" => "5.006",
     "strict" => 0,
     "warnings" => 0
   },
