@@ -1,6 +1,8 @@
 Release history for HTTP-Tiny-Mech
 
 {{$NEXT}}
+
+0.1.3 2012-11-08T14:06:30Z
  [Bugs]
  - Resolves github #1 "Adjust get() to bridge HTTP::Tiny and WWW::Mechanize
    APIs", reported by Pedro Melo, with fix by Pedro Melo.
