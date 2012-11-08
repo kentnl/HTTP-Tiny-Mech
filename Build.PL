@@ -17,7 +17,8 @@ my %module_build_args = (
   },
   "dist_abstract" => "Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible interface.",
   "dist_author" => [
-    "Kent Fredric <kentnl\@cpan.org>"
+    "Kent Fredric <kentnl\@cpan.org>",
+    "Pedro Melo <melo\@simplicidade.org>"
   ],
   "dist_name" => "HTTP-Tiny-Mech",
   "dist_version" => "0.1.3",

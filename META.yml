@@ -2,6 +2,7 @@
 abstract: 'Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible interface.'
 author:
   - 'Kent Fredric <kentnl@cpan.org>'
+  - 'Pedro Melo <melo@simplicidade.org>'
 build_requires:
   File::Find: 0
   File::Temp: 0

@@ -121,9 +121,19 @@ Interface should be the same as it is with L<HTTP::Tiny/get>.
 
 Interface should be the same as it is with L<HTTP::Tiny/request>
 
-=head1 AUTHOR
+=head1 AUTHORS
+
+=over 4
+
+=item *
 
 Kent Fredric <kentnl@cpan.org>
+
+=item *
+
+Pedro Melo <melo@simplicidade.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

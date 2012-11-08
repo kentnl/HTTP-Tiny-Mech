@@ -41,8 +41,10 @@ WRAPPED METHODS
   request
     Interface should be the same as it is with "request" in HTTP::Tiny
 
-AUTHOR
-    Kent Fredric <kentnl@cpan.org>
+AUTHORS
+    *   Kent Fredric <kentnl@cpan.org>
+
+    *   Pedro Melo <melo@simplicidade.org>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2012 by Kent Fredric <kentnl@cpan.org>.
