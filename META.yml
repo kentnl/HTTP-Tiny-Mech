@@ -44,13 +44,13 @@ x_BuiltWith:
     HTTP::Tiny: 0.024
     Module::Build: 0.4003
     Moose: 2.0604
-    MooseX::NonMoose: 'NA(possibly not installed)'
+    MooseX::NonMoose: 0.22
     Pod::Coverage::TrustPod: 0.100002
     Test::CPAN::Meta: 0.22
     Test::More: 0.98
     Test::Pod: 1.45
     Test::Pod::Coverage: 1.08
-    WWW::Mechanize: 'NA(possibly not installed)'
+    WWW::Mechanize: 1.72
     perl: 'NA(skipped: perl)'
     strict: 1.07
     version: 0.9901
