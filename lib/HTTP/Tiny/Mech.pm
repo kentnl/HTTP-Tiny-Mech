@@ -50,7 +50,7 @@ sub _wrap_request {
 
 sub get {
   my ( $self, $uri, $opts ) = @_;
-  return $self->_unwrap_response( $self->mechua->get( $uri, ($opts? %$opts : ()) ) );
+  return $self->_unwrap_response( $self->mechua->get( $uri, ($opts? %{$opts} : ()) ) );
 }
 
 
