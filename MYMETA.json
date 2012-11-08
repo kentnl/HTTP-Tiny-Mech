@@ -5,7 +5,7 @@
       "Pedro Melo <melo@simplicidade.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300028, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "perl_5"
    ],
@@ -17,28 +17,15 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Module::Build" : "0.4003"
+            "File::Find" : "0",
+            "File::Temp" : "0",
+            "Module::Build" : "0.4003",
+            "Test::More" : "0.98"
          }
       },
       "configure" : {
          "requires" : {
             "Module::Build" : "0.4003"
-         }
-      },
-      "develop" : {
-         "recommends" : {
-            "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : "v1.3.0"
-         },
-         "requires" : {
-            "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : "0",
-            "Pod::Coverage::TrustPod" : "0",
-            "Test::CPAN::Meta" : "0",
-            "Test::Pod" : "1.41",
-            "Test::Pod::Coverage" : "1.08",
-            "version" : "0.9901"
-         },
-         "suggests" : {
-            "Dist::Zilla::PluginBundle::Author::KENTNL" : "v1.5.1"
          }
       },
       "runtime" : {
@@ -52,13 +39,6 @@
             "strict" : "0",
             "warnings" : "0"
          }
-      },
-      "test" : {
-         "requires" : {
-            "File::Find" : "0",
-            "File::Temp" : "0",
-            "Test::More" : "0.98"
-         }
       }
    },
    "provides" : {
@@ -71,9 +51,7 @@
    "resources" : {
       "homepage" : "https://github.com/kentfredric/HTTP-Tiny-Mech",
       "repository" : {
-         "type" : "git",
-         "url" : "https://github.com/kentfredric/HTTP-Tiny-Mech.git",
-         "web" : "https://github.com/kentfredric/HTTP-Tiny-Mech"
+         "url" : "https://github.com/kentfredric/HTTP-Tiny-Mech.git"
       }
    },
    "version" : "0.1.3",
@@ -101,11 +79,11 @@
       },
       "perl" : {
          "original" : "v5.16.2",
-         "qv" : 1,
+         "qv" : "1",
          "version" : [
-            5,
-            16,
-            2
+            "5",
+            "16",
+            "2"
          ]
       },
       "perl-config" : {
@@ -428,4 +406,3 @@
    },
    "x_authority" : "cpan:KENTNL"
 }
-
