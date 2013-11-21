@@ -6,7 +6,7 @@ BEGIN {
   $HTTP::Tiny::Mech::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $HTTP::Tiny::Mech::VERSION = '0.1.3';
+  $HTTP::Tiny::Mech::VERSION = '0.1.4';
 }
 
 # ABSTRACT: Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible interface.
@@ -70,7 +70,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -78,7 +78,7 @@ HTTP::Tiny::Mech - Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible in
 
 =head1 VERSION
 
-version 0.1.3
+version 0.1.4
 
 =head1 SYNOPSIS
 
@@ -137,7 +137,7 @@ Pedro Melo <melo@simplicidade.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2013 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
