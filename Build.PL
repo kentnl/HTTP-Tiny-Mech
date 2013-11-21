@@ -7,13 +7,10 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
-    "File::Find" => 0,
-    "File::Temp" => 0,
-    "Module::Build" => "0.4003",
-    "Test::More" => "0.98"
+    "Module::Build" => "0.4202"
   },
   "configure_requires" => {
-    "Module::Build" => "0.4003"
+    "Module::Build" => "0.4202"
   },
   "dist_abstract" => "Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible interface.",
   "dist_author" => [
@@ -21,7 +18,7 @@ my %module_build_args = (
     "Pedro Melo <melo\@simplicidade.org>"
   ],
   "dist_name" => "HTTP-Tiny-Mech",
-  "dist_version" => "0.1.3",
+  "dist_version" => "0.1.4",
   "license" => "perl",
   "module_name" => "HTTP::Tiny::Mech",
   "recommends" => {},
@@ -36,9 +33,23 @@ my %module_build_args = (
     "strict" => 0,
     "warnings" => 0
   },
-  "script_files" => []
+  "script_files" => [],
+  "test_requires" => {
+    "Test::More" => "1.001002"
+  }
 );
 
+
+my %fallback_build_requires = (
+  "Module::Build" => "0.4202",
+  "Test::More" => "1.001002"
+);
+
+
+unless ( eval { Module::Build->VERSION(0.4004) } ) {
+  delete $module_build_args{test_requires};
+  $module_build_args{build_requires} = \%fallback_build_requires;
+}
 
 my $build = Module::Build->new(%module_build_args);
 
