@@ -5,14 +5,13 @@ package HTTP::Tiny::Mech;
 
 # ABSTRACT: Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible interface.
 
-use Moose;
-use MooseX::NonMoose;
-extends 'HTTP::Tiny';
-
-has 'mechua' => (
-  is         => 'rw',
-  lazy_build => 1,
-);
+use Class::Tiny {
+  mechua => sub {
+    require WWW::Mechanize;
+    return WWW::Mechanize->new();
+  },
+};
+use parent "HTTP::Tiny";
 
 =head1 SYNOPSIS
 
@@ -49,11 +48,6 @@ fall through to a native L<HTTP::Tiny>.
 
 =cut
 
-sub _build_mechua {
-  require WWW::Mechanize;
-  return WWW::Mechanize->new();
-}
-
 sub _unwrap_response {
   my ( $self, $response ) = @_;
   return {
@@ -84,7 +78,7 @@ Interface should be the same as it is with L<HTTP::Tiny/get>.
 
 sub get {
   my ( $self, $uri, $opts ) = @_;
-  return $self->_unwrap_response( $self->mechua->get( $uri, ($opts? %{$opts} : ()) ) );
+  return $self->_unwrap_response( $self->mechua->get( $uri, ( $opts ? %{$opts} : () ) ) );
 }
 
 =head2 request
@@ -99,8 +93,5 @@ sub request {
   my $response = $self->mechua->request($req);
   return $self->_unwrap_response($response);
 }
-
-__PACKAGE__->meta->make_immutable;
-no Moose;
 
 1;
