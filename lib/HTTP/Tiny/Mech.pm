@@ -6,26 +6,29 @@ BEGIN {
   $HTTP::Tiny::Mech::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $HTTP::Tiny::Mech::VERSION = '0.1.4';
+  $HTTP::Tiny::Mech::VERSION = '0.2.0';
 }
 
 # ABSTRACT: Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible interface.
 
-use Moose;
-use MooseX::NonMoose;
-extends 'HTTP::Tiny';
+use Class::Tiny {
+  mechua => sub {
+    require WWW::Mechanize;
+    return WWW::Mechanize->new();
+  },
+};
 
-has 'mechua' => (
-  is         => 'rw',
-  lazy_build => 1,
-);
+# This is intentionally after Class::Tiny
+# so that inheritance is
+#
+# HTTP::Tiny::Mech -> [ Class::Tiny::Object , HTTP::Tiny ]
+#
+# So that mechua is parsed by Class::Tiny::Object
+#
+use parent 'HTTP::Tiny';
 
 
 
-sub _build_mechua {
-  require WWW::Mechanize;
-  return WWW::Mechanize->new();
-}
 
 sub _unwrap_response {
   my ( $self, $response ) = @_;
@@ -50,7 +53,7 @@ sub _wrap_request {
 
 sub get {
   my ( $self, $uri, $opts ) = @_;
-  return $self->_unwrap_response( $self->mechua->get( $uri, ($opts? %{$opts} : ()) ) );
+  return $self->_unwrap_response( $self->mechua->get( $uri, ( $opts ? %{$opts} : () ) ) );
 }
 
 
@@ -60,9 +63,6 @@ sub request {
   my $response = $self->mechua->request($req);
   return $self->_unwrap_response($response);
 }
-
-__PACKAGE__->meta->make_immutable;
-no Moose;
 
 1;
 
@@ -78,7 +78,7 @@ HTTP::Tiny::Mech - Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible in
 
 =head1 VERSION
 
-version 0.1.4
+version 0.2.0
 
 =head1 SYNOPSIS
 
@@ -110,6 +110,15 @@ It works so far for this purpose.
 
 At present, only L</get> and L</request> are implemented, and all other calls
 fall through to a native L<HTTP::Tiny>.
+
+=head1 ATTRIBUTES
+
+=head2 C<mechua>
+
+This class provides one non-standard parameter not in HTTP::Tiny, C<mechua>, which
+is normally an autovivified C<WWW::Mechanize> instance.
+
+You may override this parameter if you want to provide a custom instance of a C<WWW::Mechanize> class.
 
 =head1 WRAPPED METHODS
 
