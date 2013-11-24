@@ -17,6 +17,9 @@ Release history for HTTP-Tiny-Mech
  [Documentation]
  - Changes retroactively tided.
 
+ [Tests]
+ - Basic constructor tests added.
+
 0.1.4 2013-11-21T07:32:56Z
  [00 Maint release]
 
