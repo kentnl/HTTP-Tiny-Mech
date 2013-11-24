@@ -34,6 +34,14 @@ DESCRIPTION
     At present, only "get" and "request" are implemented, and all other
     calls fall through to a native HTTP::Tiny.
 
+ATTRIBUTES
+  "mechua"
+    This class provides one non-standard parameter not in HTTP::Tiny,
+    "mechua", which is normally an autovivified "WWW::Mechanize" instance.
+
+    You may override this parameter if you want to provide a custom instance
+    of a "WWW::Mechanize" class.
+
 WRAPPED METHODS
   get
     Interface should be the same as it is with "get" in HTTP::Tiny.
