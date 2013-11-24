@@ -1,6 +1,8 @@
 Release history for HTTP-Tiny-Mech
 
 {{$NEXT}}
+
+0.2.0 2013-11-24T00:18:47Z
  [00 Major]
  - Internals refactored in terms of Class::Tiny, removing the need for
    Moose to do basically nothing.
