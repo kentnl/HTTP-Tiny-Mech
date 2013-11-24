@@ -1,6 +1,8 @@
 Release history for HTTP-Tiny-Mech
 
 {{$NEXT}}
+
+0.2.1 2013-11-24T00:55:35Z
  [Dependencies::Noteworthy]
  - Needs HTTP::Tiny 0.022 for tests.
 
