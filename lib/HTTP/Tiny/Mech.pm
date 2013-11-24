@@ -11,7 +11,15 @@ use Class::Tiny {
     return WWW::Mechanize->new();
   },
 };
-use parent "HTTP::Tiny";
+
+# This is intentionally after Class::Tiny
+# so that inheritance is
+#
+# HTTP::Tiny::Mech -> [ Class::Tiny::Object , HTTP::Tiny ]
+#
+# So that mechua is parsed by Class::Tiny::Object
+#
+use parent 'HTTP::Tiny';
 
 =head1 SYNOPSIS
 
@@ -45,6 +53,15 @@ It works so far for this purpose.
 
 At present, only L</get> and L</request> are implemented, and all other calls
 fall through to a native L<HTTP::Tiny>.
+
+=cut
+
+=attr C<mechua>
+
+This class provides one non-standard parameter not in HTTP::Tiny, C<mechua>, which
+is normally an autovivified C<WWW::Mechanize> instance.
+
+You may override this parameter if you want to provide a custom instance of a C<WWW::Mechanize> class.
 
 =cut
 
