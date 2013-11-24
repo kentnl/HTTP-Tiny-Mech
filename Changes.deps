@@ -1,4 +1,11 @@
-0.2.0
+0.2.1
+ [Added / test requires]
+ - HTTP::Tiny 0.022
+
+ [Changed / runtime requires]
+ - HTTP::Tiny 0 → 0.022
+
+0.2.0 2013-11-24T00:18:47Z
  [Added / runtime requires]
  - Class::Tiny
  - parent

@@ -3,6 +3,7 @@ use warnings;
 
 use Test::More tests => 3;
 use HTTP::Tiny::Mech;
+use HTTP::Tiny 0.022;
 
 subtest basic => sub {
   my $instance = HTTP::Tiny::Mech->new();
