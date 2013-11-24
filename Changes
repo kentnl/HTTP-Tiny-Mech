@@ -1,5 +1,14 @@
 Release history for HTTP-Tiny-Mech
 
+0.2.1 2013-11-24T00:55:35Z
+ [Dependencies::Noteworthy]
+ - Needs HTTP::Tiny 0.022 for tests.
+
+ [Dependencies::Stats]
+ - Dependencies changed, see Changes.deps{,.all,.dev} for details
+ - runtime: ↑1
+ - test: +1
+
 0.2.0 2013-11-24T00:18:47Z
  [00 Major]
  - Internals refactored in terms of Class::Tiny, removing the need for

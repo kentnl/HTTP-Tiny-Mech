@@ -18,7 +18,7 @@ my %module_build_args = (
     "Pedro Melo <melo\@simplicidade.org>"
   ],
   "dist_name" => "HTTP-Tiny-Mech",
-  "dist_version" => "0.2.0",
+  "dist_version" => "0.2.1",
   "license" => "perl",
   "module_name" => "HTTP::Tiny::Mech",
   "recommends" => {},
@@ -26,7 +26,7 @@ my %module_build_args = (
   "requires" => {
     "Class::Tiny" => 0,
     "HTTP::Request" => 0,
-    "HTTP::Tiny" => 0,
+    "HTTP::Tiny" => "0.022",
     "WWW::Mechanize" => 0,
     "parent" => 0,
     "perl" => "5.006",
@@ -35,12 +35,14 @@ my %module_build_args = (
   },
   "script_files" => [],
   "test_requires" => {
+    "HTTP::Tiny" => "0.022",
     "Test::More" => "1.001002"
   }
 );
 
 
 my %fallback_build_requires = (
+  "HTTP::Tiny" => "0.022",
   "Module::Build" => "0.4202",
   "Test::More" => "1.001002"
 );

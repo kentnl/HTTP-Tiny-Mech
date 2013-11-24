@@ -4,6 +4,7 @@ author:
   - 'Kent Fredric <kentnl@cpan.org>'
   - 'Pedro Melo <melo@simplicidade.org>'
 build_requires:
+  HTTP::Tiny: 0.022
   Module::Build: 0.4202
   Test::More: 1.001002
 configure_requires:
@@ -18,11 +19,11 @@ name: HTTP-Tiny-Mech
 provides:
   HTTP::Tiny::Mech:
     file: lib/HTTP/Tiny/Mech.pm
-    version: v0.2.0
+    version: v0.2.1
 requires:
   Class::Tiny: 0
   HTTP::Request: 0
-  HTTP::Tiny: 0
+  HTTP::Tiny: 0.022
   WWW::Mechanize: 0
   parent: 0
   perl: 5.006
@@ -32,7 +33,7 @@ resources:
   bugtracker: https://github.com/kentfredric/HTTP-Tiny-Mech/issues
   homepage: https://github.com/kentfredric/HTTP-Tiny-Mech
   repository: https://github.com/kentfredric/HTTP-Tiny-Mech.git
-version: 0.2.0
+version: 0.2.1
 x_BuiltWith:
   modules:
     Class::Tiny: 0.012

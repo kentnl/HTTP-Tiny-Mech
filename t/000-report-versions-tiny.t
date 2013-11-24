@@ -50,7 +50,7 @@ sub pmver {
 
 eval { $v .= pmver('Class::Tiny','any version') };
 eval { $v .= pmver('HTTP::Request','any version') };
-eval { $v .= pmver('HTTP::Tiny','any version') };
+eval { $v .= pmver('HTTP::Tiny','0.022') };
 eval { $v .= pmver('Module::Build','0.4202') };
 eval { $v .= pmver('Test::More','1.001002') };
 eval { $v .= pmver('WWW::Mechanize','any version') };
