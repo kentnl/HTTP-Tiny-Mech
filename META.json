@@ -86,7 +86,7 @@
          "requires" : {
             "Class::Tiny" : "0",
             "HTTP::Request" : "0",
-            "HTTP::Tiny" : "0",
+            "HTTP::Tiny" : "0.022",
             "WWW::Mechanize" : "0",
             "parent" : "0",
             "perl" : "5.006",
@@ -96,6 +96,7 @@
       },
       "test" : {
          "requires" : {
+            "HTTP::Tiny" : "0.022",
             "Test::More" : "1.001002"
          }
       }
@@ -103,7 +104,7 @@
    "provides" : {
       "HTTP::Tiny::Mech" : {
          "file" : "lib/HTTP/Tiny/Mech.pm",
-         "version" : "v0.2.0"
+         "version" : "v0.2.1"
       }
    },
    "release_status" : "stable",
@@ -118,7 +119,7 @@
          "web" : "https://github.com/kentfredric/HTTP-Tiny-Mech"
       }
    },
-   "version" : "0.2.0",
+   "version" : "0.2.1",
    "x_BuiltWith" : {
       "modules" : {
          "Class::Tiny" : "0.012",

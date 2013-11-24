@@ -6,7 +6,7 @@ BEGIN {
   $HTTP::Tiny::Mech::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $HTTP::Tiny::Mech::VERSION = '0.2.0';
+  $HTTP::Tiny::Mech::VERSION = '0.2.1';
 }
 
 # ABSTRACT: Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible interface.
@@ -78,7 +78,7 @@ HTTP::Tiny::Mech - Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible in
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =head1 SYNOPSIS
 
