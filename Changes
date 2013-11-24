@@ -1,12 +1,24 @@
 Release history for HTTP-Tiny-Mech
 
-0.2.0 2013-11-24T00:02:51Z
+0.2.0 2013-11-24T00:06:20Z
  [00 Major]
  - Internals refactored in terms of Class::Tiny, removing the need for
    Moose to do basically nothing.
 
-  [Documentation]
-  - Changes retroactively tided.
+ [Dependencies::Noteworthy]
+ - use Class::Tiny
+ - no longer uses Moose and MooseX::NonMoose
+
+ [Dependencies::Stats]
+ - Dependencies changed, see Changes.deps{,.all,.dev} for details
+ - develop: ↑1
+ - runtime: +2 -2
+
+ [Documentation]
+ - Changes retroactively tided.
+
+ [Tests]
+ - Basic constructor tests added.
 
 0.1.4 2013-11-21T07:32:56Z
  [00 Maint release]
