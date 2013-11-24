@@ -6,26 +6,20 @@ BEGIN {
   $HTTP::Tiny::Mech::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $HTTP::Tiny::Mech::VERSION = '0.1.4';
+  $HTTP::Tiny::Mech::VERSION = '0.2.0';
 }
 
 # ABSTRACT: Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible interface.
 
-use Moose;
-use MooseX::NonMoose;
-extends 'HTTP::Tiny';
-
-has 'mechua' => (
-  is         => 'rw',
-  lazy_build => 1,
-);
-
+use Class::Tiny {
+  mechua => sub {
+    require WWW::Mechanize;
+    return WWW::Mechanize->new();
+  },
+};
+use parent "HTTP::Tiny";
 
 
-sub _build_mechua {
-  require WWW::Mechanize;
-  return WWW::Mechanize->new();
-}
 
 sub _unwrap_response {
   my ( $self, $response ) = @_;
@@ -50,7 +44,7 @@ sub _wrap_request {
 
 sub get {
   my ( $self, $uri, $opts ) = @_;
-  return $self->_unwrap_response( $self->mechua->get( $uri, ($opts? %{$opts} : ()) ) );
+  return $self->_unwrap_response( $self->mechua->get( $uri, ( $opts ? %{$opts} : () ) ) );
 }
 
 
@@ -60,9 +54,6 @@ sub request {
   my $response = $self->mechua->request($req);
   return $self->_unwrap_response($response);
 }
-
-__PACKAGE__->meta->make_immutable;
-no Moose;
 
 1;
 
@@ -78,7 +69,7 @@ HTTP::Tiny::Mech - Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible in
 
 =head1 VERSION
 
-version 0.1.4
+version 0.2.0
 
 =head1 SYNOPSIS
 

@@ -18,17 +18,17 @@ my %module_build_args = (
     "Pedro Melo <melo\@simplicidade.org>"
   ],
   "dist_name" => "HTTP-Tiny-Mech",
-  "dist_version" => "0.1.4",
+  "dist_version" => "0.2.0",
   "license" => "perl",
   "module_name" => "HTTP::Tiny::Mech",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
+    "Class::Tiny" => 0,
     "HTTP::Request" => 0,
     "HTTP::Tiny" => 0,
-    "Moose" => 0,
-    "MooseX::NonMoose" => 0,
     "WWW::Mechanize" => 0,
+    "parent" => 0,
     "perl" => "5.006",
     "strict" => 0,
     "warnings" => 0

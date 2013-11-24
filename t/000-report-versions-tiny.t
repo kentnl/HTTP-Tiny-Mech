@@ -48,13 +48,13 @@ sub pmver {
     return sprintf('%-45s => %-10s%-15s%s', $module, $pmver, $wanted, "\n");
 }
 
+eval { $v .= pmver('Class::Tiny','any version') };
 eval { $v .= pmver('HTTP::Request','any version') };
 eval { $v .= pmver('HTTP::Tiny','any version') };
 eval { $v .= pmver('Module::Build','0.4202') };
-eval { $v .= pmver('Moose','any version') };
-eval { $v .= pmver('MooseX::NonMoose','any version') };
 eval { $v .= pmver('Test::More','1.001002') };
 eval { $v .= pmver('WWW::Mechanize','any version') };
+eval { $v .= pmver('parent','any version') };
 eval { $v .= pmver('strict','any version') };
 eval { $v .= pmver('warnings','any version') };
 
