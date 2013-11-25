@@ -39,7 +39,7 @@ do {
   };
   for my $line ( split /\n/, $output ) {
     next if $good_tags{$line};
-    diag("Bad tag: \e[31m$tag\e[0m");
+    diag("Bad tag: \e[31m$line\e[0m");
     git( 'tag', '-d', $line );
   }
 };
