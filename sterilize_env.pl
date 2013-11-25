@@ -6,8 +6,6 @@ use FindBin;
 use lib "$FindBin::Bin/lib";
 use tools;
 
-my $corelists = "$FindBin::Bin/corelist-data";
-
 if ( not env_exists('STERILIZE_ENV') ) {
   diag("\e[31STERILIZE_ENV is not set, skipping, because this is probably Travis's Default ( and unwanted ) target");
   exit 0;
