@@ -21,15 +21,25 @@ do {
   ($goodtag) = split /\n/, $output;
 };
 diag("TIP Version tag is \e[32m$goodtag\e[0m");
-my @tags;
+my %good_tags;
+do {
+  my $output = capture_stdout {
+    git( 'log', '--simplify-by-decoration', '--pretty=format:%d' );
+  };
+  for my $line ( split /\n/, $output ) {
+    next unless $line =~ /\(tag:\s+(.*)\)/;
+    my $tag = $1;
+    diag("Good tag: \e[32m$tag\e[0m");
+    $good_tags{$tag} = 1;
+  }
+};
 do {
   my $output = capture_stdout {
     git('tag');
   };
-  @tags = split /\n/, $output;
+  for my $line ( split /\n/, $output ) {
+    next if $good_tags{$line};
+    diag("Bad tag: \e[31m$tag\e[0m");
+    git( 'tag', '-d', $line );
+  }
 };
-for my $tag (@tags) {
-  next if $tag eq $goodtag;
-  git( 'tag', '-d', $tag );
-}
-
