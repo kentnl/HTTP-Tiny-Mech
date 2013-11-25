@@ -27,10 +27,14 @@ do {
     git( 'log', '--simplify-by-decoration', '--pretty=format:%d' );
   };
   for my $line ( split /\n/, $output ) {
-    next unless $line =~ /\(tag:\s+(.*)\)/;
-    my $tag = $1;
-    diag("Good tag: \e[32m$tag\e[0m");
-    $good_tags{$tag} = 1;
+    if ( $line =~ /\(tag:\s+(.*)\)/ ) {
+      my $tag = $1;
+      diag("Good tag: \e[32m$tag\e[0m");
+      $good_tags{$tag} = 1;
+    }
+    else {
+      diag("Line not matched regexp: <\e[31m$line\e[0m>");
+    }
   }
 };
 do {
