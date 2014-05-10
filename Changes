@@ -1,6 +1,8 @@
 Release history for HTTP-Tiny-Mech
 
 {{$NEXT}}
+
+1.000000 2014-05-10T02:41:46Z
  [00 Minor]
  - Mostly a packaging changes, not interesting code changes, but downstream
    vendors who package by hand may need to pay attention.
