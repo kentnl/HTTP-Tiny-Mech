@@ -108,8 +108,8 @@ sub get {
 
 
 sub request {
-  my $self     = shift;
-  my $req      = $self->_wrap_request(@_);
+  my ( $self, @request ) = @_;
+  my $req      = $self->_wrap_request(@request);
   my $response = $self->mechua->request($req);
   return $self->_unwrap_response($response);
 }
