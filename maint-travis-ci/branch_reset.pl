@@ -15,12 +15,14 @@ git( 'checkout', $ENV{TRAVIS_BRANCH} );
 git( 'reset', '--hard', $ENV{TRAVIS_COMMIT} );
 my $goodtag;
 do {
-  my $output = capture_stdout {
-    git( 'describe', '--tags', '--abbrev=0', $ENV{TRAVIS_BRANCH} );
+  my ( $output, $return ) = capture_stdout {
+    safe_exec_nonfatal( 'git', 'describe', '--tags', '--abbrev=0', $ENV{TRAVIS_BRANCH} );
   };
   ($goodtag) = split /\n/, $output;
+  if ( not $return ) {
+    diag("TIP Version tag is \e[32m$goodtag\e[0m");
+  }
 };
-diag("TIP Version tag is \e[32m$goodtag\e[0m");
 my %good_tags;
 do {
   my $output = capture_stdout {

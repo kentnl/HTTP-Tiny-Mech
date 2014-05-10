@@ -21,15 +21,9 @@ if ( env_is( 'TRAVIS_BRANCH', 'master' ) and env_is( 'TRAVIS_PERL_VERSION', '5.8
   exit 0;
 }
 if ( env_is( 'TRAVIS_BRANCH', 'master' ) ) {
-  my $xtest = safe_exec_nonfatal( 'dzil', 'xtest' );
-  my $test  = safe_exec_nonfatal( 'dzil', 'test' );
-  if ( $test != 0 ) {
-    exit $test;
-  }
-  if ( $xtest != 0 ) {
-    exit $xtest;
-  }
-  exit 0;
+  $ENV{HARNESS_OPTIONS} = 'j100:c';
+  $ENV{PERL5OPT}        = '-MDevel::Confess';
+  safe_exec( 'dzil', 'test', '--release' );
 }
 else {
   my @paths = './t';

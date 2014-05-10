@@ -24,6 +24,8 @@ if ( env_true('DEVELOPER_DEPS') ) {
   push @params, '--dev';
 }
 if ( env_is( 'TRAVIS_BRANCH', 'master' ) ) {
+  cpanm( @params, 'Devel::Confess' );
+  $ENV{PERL5OPT} = '-MDevel::Confess';
   cpanm( @params, 'Dist::Zilla', 'Capture::Tiny',      'Pod::Weaver' );
   cpanm( @params, '--dev',       'Dist::Zilla~>5.002', 'Pod::Weaver' );
   safe_exec( 'git', 'config', '--global', 'user.email', 'kentfredric+travisci@gmail.com' );
@@ -37,11 +39,29 @@ if ( env_is( 'TRAVIS_BRANCH', 'master' ) ) {
     cpanm( @params, split /\n/, $stdout );
   }
   $stdout = capture_stdout {
-    safe_exec( 'dzil', 'listdeps', '--missing' );
+    safe_exec( 'dzil', 'listdeps', '--author', '--versions', '--missing' );
   };
 
   if ( $stdout !~ /^\s*$/msx ) {
-    cpanm( @params, split /\n/, $stdout );
+    my @deps = split /\n/, $stdout;
+    my @parsedeps;
+    for my $dep ( split /\n/, $stdout ) {
+      diag("Missing: \e[31m$dep\e[0m");
+      if ( $dep =~ /^\s*([^=\s]+)\s*=\s*(.*$)/ ) {
+        my ( $module, $version ) = ( $1, $2 );
+        diag("Module: \e[31m$module\e[0m -> \e[32m$version\e[0m");
+        if ( $version =~ /^\s*0\s*$/ ) {
+          push @parsedeps, $module;
+          next;
+        }
+        if ( $version =~ /^v?[0-9._]+/ ) {
+          push @parsedeps, "$module~>=$version";
+          next;
+        }
+        push @parsedeps, "$module~$version";
+      }
+    }
+    cpanm( @params, @parsedeps );
   }
 }
 else {
