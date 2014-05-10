@@ -5,6 +5,8 @@ package HTTP::Tiny::Mech;
 
 # ABSTRACT: Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible interface.
 
+# AUTHORITY
+
 use Class::Tiny {
   mechua => sub {
     require WWW::Mechanize;
