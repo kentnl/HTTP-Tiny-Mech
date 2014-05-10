@@ -1,15 +1,12 @@
+use 5.006;    # pragmas, our
 use strict;
 use warnings;
 
 package HTTP::Tiny::Mech;
-BEGIN {
-  $HTTP::Tiny::Mech::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $HTTP::Tiny::Mech::VERSION = '0.2.1';
-}
-
+$HTTP::Tiny::Mech::VERSION = '1.000000';
 # ABSTRACT: Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible interface.
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Class::Tiny {
   mechua => sub {
@@ -30,8 +27,49 @@ use parent 'HTTP::Tiny';
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 sub _unwrap_response {
-  my ( $self, $response ) = @_;
+  my ( undef, $response ) = @_;
   return {
     status  => $response->code,
     reason  => $response->message,
@@ -42,7 +80,7 @@ sub _unwrap_response {
 }
 
 sub _wrap_request {
-  my ( $self, $method, $uri, $opts ) = @_;
+  my ( undef, $method, $uri, $opts ) = @_;
   require HTTP::Request;
   my $req = HTTP::Request->new( $method, $uri );
   $req->headers( $opts->{headers} ) if $opts->{headers};
@@ -51,15 +89,27 @@ sub _wrap_request {
 }
 
 
+
+
+
+
+
+
+
 sub get {
   my ( $self, $uri, $opts ) = @_;
   return $self->_unwrap_response( $self->mechua->get( $uri, ( $opts ? %{$opts} : () ) ) );
 }
 
 
+
+
+
+
+
 sub request {
-  my $self     = shift;
-  my $req      = $self->_wrap_request(@_);
+  my ( $self, @request ) = @_;
+  my $req      = $self->_wrap_request(@request);
   my $response = $self->mechua->request($req);
   return $self->_unwrap_response($response);
 }
@@ -78,7 +128,7 @@ HTTP::Tiny::Mech - Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible in
 
 =head1 VERSION
 
-version 0.2.1
+version 1.000000
 
 =head1 SYNOPSIS
 
@@ -102,14 +152,14 @@ version 0.2.1
 
 This code is somewhat poorly documented, and highly experimental.
 
-Its the result of a quick bit of hacking to get L<MetaCPAN::API> working faster
-via the L<WWW::Mechanize::Cached> module ( and gaining cache persistence via
-L<CHI> )
+Its the result of a quick bit of hacking to get L<< C<MetaCPAN::API>|MetaCPAN::API >> working faster
+via the L<< C<WWW::Mechanize::Cached>|WWW::Mechanize::Cached >> module ( and gaining cache persistence via
+L<< C<CHI>|CHI >> )
 
 It works so far for this purpose.
 
 At present, only L</get> and L</request> are implemented, and all other calls
-fall through to a native L<HTTP::Tiny>.
+fall through to a native L<< C<HTTP::Tiny>|HTTP::Tiny >>.
 
 =head1 ATTRIBUTES
 
@@ -146,7 +196,7 @@ Pedro Melo <melo@simplicidade.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
