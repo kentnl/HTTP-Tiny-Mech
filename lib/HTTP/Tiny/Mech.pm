@@ -69,7 +69,7 @@ use parent 'HTTP::Tiny';
 
 
 sub _unwrap_response {
-  my ( $self, $response ) = @_;
+  my ( undef, $response ) = @_;
   return {
     status  => $response->code,
     reason  => $response->message,
@@ -80,7 +80,7 @@ sub _unwrap_response {
 }
 
 sub _wrap_request {
-  my ( $self, $method, $uri, $opts ) = @_;
+  my ( undef, $method, $uri, $opts ) = @_;
   require HTTP::Request;
   my $req = HTTP::Request->new( $method, $uri );
   $req->headers( $opts->{headers} ) if $opts->{headers};
