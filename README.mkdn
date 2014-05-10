@@ -4,7 +4,7 @@ HTTP::Tiny::Mech - Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible in
 
 # VERSION
 
-version 0.2.1
+version 1.000000
 
 # SYNOPSIS
 
@@ -63,7 +63,7 @@ Interface should be the same as it is with ["request" in HTTP::Tiny](https://met
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
