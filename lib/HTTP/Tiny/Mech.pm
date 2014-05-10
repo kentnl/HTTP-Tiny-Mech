@@ -5,6 +5,8 @@ package HTTP::Tiny::Mech;
 $HTTP::Tiny::Mech::VERSION = '1.000000';
 # ABSTRACT: Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible interface.
 
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
 use Class::Tiny {
   mechua => sub {
     require WWW::Mechanize;
