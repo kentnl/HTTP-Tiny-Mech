@@ -3,7 +3,7 @@ NAME
     compatible interface.
 
 VERSION
-    version 0.2.1
+    version 1.000000
 
 SYNOPSIS
       # Get something that expects an HTTP::Tiny instance
@@ -55,7 +55,7 @@ AUTHORS
     *   Pedro Melo <melo@simplicidade.org>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2013 by Kent Fredric <kentnl@cpan.org>.
+    This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.

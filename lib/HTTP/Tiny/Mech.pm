@@ -2,13 +2,7 @@ use strict;
 use warnings;
 
 package HTTP::Tiny::Mech;
-BEGIN {
-  $HTTP::Tiny::Mech::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $HTTP::Tiny::Mech::VERSION = '0.2.1';
-}
-
+$HTTP::Tiny::Mech::VERSION = '1.000000';
 # ABSTRACT: Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible interface.
 
 use Class::Tiny {
@@ -26,6 +20,47 @@ use Class::Tiny {
 # So that mechua is parsed by Class::Tiny::Object
 #
 use parent 'HTTP::Tiny';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -51,10 +86,22 @@ sub _wrap_request {
 }
 
 
+
+
+
+
+
+
+
 sub get {
   my ( $self, $uri, $opts ) = @_;
   return $self->_unwrap_response( $self->mechua->get( $uri, ( $opts ? %{$opts} : () ) ) );
 }
+
+
+
+
+
 
 
 sub request {
@@ -78,7 +125,7 @@ HTTP::Tiny::Mech - Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible in
 
 =head1 VERSION
 
-version 0.2.1
+version 1.000000
 
 =head1 SYNOPSIS
 
@@ -146,7 +193,7 @@ Pedro Melo <melo@simplicidade.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
