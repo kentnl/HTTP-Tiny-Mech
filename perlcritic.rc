@@ -86,7 +86,7 @@ allow_includes = 1
 
 [CodeLayout::RequireTrailingCommas]
 
-[CodeLayout::RequireUseUTF8]
+[-CodeLayout::RequireUseUTF8]
 
 [Compatibility::ConstantLeadingUnderscore]
 
