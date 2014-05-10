@@ -48,14 +48,14 @@ use parent 'HTTP::Tiny';
 
 This code is somewhat poorly documented, and highly experimental.
 
-Its the result of a quick bit of hacking to get L<MetaCPAN::API> working faster
-via the L<WWW::Mechanize::Cached> module ( and gaining cache persistence via
-L<CHI> )
+Its the result of a quick bit of hacking to get L<< C<MetaCPAN::API>|MetaCPAN::API >> working faster
+via the L<< C<WWW::Mechanize::Cached>|WWW::Mechanize::Cached >> module ( and gaining cache persistence via
+L<< C<CHI>|CHI >> )
 
 It works so far for this purpose.
 
 At present, only L</get> and L</request> are implemented, and all other calls
-fall through to a native L<HTTP::Tiny>.
+fall through to a native L<< C<HTTP::Tiny>|HTTP::Tiny >>.
 
 =cut
 
