@@ -1,6 +1,27 @@
 Release history for HTTP-Tiny-Mech
 
 {{$NEXT}}
+ [00 Minor]
+ - Mostly a packaging changes, not interesting code changes, but downstream
+   vendors who package by hand may need to pay attention.
+
+ [01 Tooling]
+ - Now uses ExtUtils::MakeMaker instead of Module::Build
+ - Now defaults to Minimum requirements and "latest" are only recommended (
+   Previously it required very recent versions of toolchain things
+   needlessly )
+
+ [02 Version Scheme]
+ - Moved from x.y.z to x.yyyzzz
+ - This is the primary reason for the 1.x on the box.
+
+ [Dependencies::Aggregate]
+ - 5.008009 : 64 → 61
+ - 5.010001 : 48 → 45
+ - 5.018002 : ? → 25
+ - 5.019000 : 29 → ?
+ - 5.019009 : ? → 28
+
  [Dependencies::Stats]
  - Dependencies changed since 0.2.1, see Changes.deps{,.all,.dev} for
    details
