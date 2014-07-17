@@ -26,6 +26,7 @@ sub new {
   return bless $instance, $self;
 }
 
+## no critic (Subroutines::RequireArgUnpacking)
 sub mechua {
   my ( $self, $new_mechua, $has_new_mechua ) = ( $_[0], $_[1], @_ > 1 );
   if ($has_new_mechua) {
@@ -35,6 +36,7 @@ sub mechua {
   require WWW::Mechanize;
   return ( $self->{mechua} = WWW::Mechanize->new() );
 }
+## use critic
 
 
 
