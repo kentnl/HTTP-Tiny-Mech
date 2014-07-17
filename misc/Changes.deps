@@ -1,6 +1,8 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-1.000001
+1.001001
+
+1.001000 2014-07-17T15:22:19Z
  [Added / test requires]
  - HTTP::Response
 
