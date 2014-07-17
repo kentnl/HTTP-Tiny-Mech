@@ -142,7 +142,7 @@
          "Dist::Zilla::Plugin::Git::Commit" : "2.023",
          "Dist::Zilla::Plugin::Git::CommitBuild" : "2.023",
          "Dist::Zilla::Plugin::Git::GatherDir" : "2.023",
-         "Dist::Zilla::Plugin::Git::NextRelease" : "0.002010",
+         "Dist::Zilla::Plugin::Git::NextRelease" : "0.002011",
          "Dist::Zilla::Plugin::Git::Tag" : "2.023",
          "Dist::Zilla::Plugin::GithubMeta" : "0.46",
          "Dist::Zilla::Plugin::License" : "5.019",
@@ -179,7 +179,7 @@
          "File::Spec::Functions" : "3.48",
          "HTTP::Request" : "6.00",
          "HTTP::Response" : "6.04",
-         "HTTP::Tiny" : "0.043",
+         "HTTP::Tiny" : "0.044",
          "List::Util" : "1.39",
          "Pod::Coverage::TrustPod" : "0.100003",
          "Test::CPAN::Changes" : "0.28",
@@ -621,7 +621,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Git::NextRelease",
             "name" : "@Author::KENTNL/Git::NextRelease",
-            "version" : "0.002010"
+            "version" : "0.002011"
          },
          {
             "class" : "Dist::Zilla::Plugin::BumpVersionAfterRelease",
