@@ -10,6 +10,7 @@ META.yml
 Makefile.PL
 README
 dist.ini
+dist.ini.meta
 lib/HTTP/Tiny/Mech.pm
 maint/perlcritic.rc.gen.pl
 misc/Changes.deps

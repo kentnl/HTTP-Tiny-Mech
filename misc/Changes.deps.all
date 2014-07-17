@@ -4,6 +4,9 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Changed / develop requires]
  - Dist::Zilla::PluginBundle::Author::KENTNL 2.013003 → 2.016004
 
+ [Removed / runtime requires]
+ - Class::Tiny
+
 1.000000 2014-05-10T02:41:46Z
  [Added / configure recommends]
  - ExtUtils::MakeMaker 6.98

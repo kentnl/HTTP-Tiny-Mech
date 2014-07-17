@@ -40,6 +40,7 @@ x_BuiltWith:
   modules:
     CPAN::Meta: '2.141520'
     CPAN::Meta::Requirements: '2.125'
+    Dist::Zilla::App::Command::bakeini: '0.001001'
     Dist::Zilla::Plugin::Authority: '1.006'
     Dist::Zilla::Plugin::AutoPrereqs: '5.019'
     Dist::Zilla::Plugin::ConfirmRelease: '5.019'
@@ -82,7 +83,6 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Twitter: '0.025'
     Dist::Zilla::Plugin::UploadToCPAN: '5.019'
     Dist::Zilla::PluginBundle::Author::KENTNL: '2.016004'
-    Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 1.7.2
     ExtUtils::MakeMaker: '6.98'
     File::Spec::Functions: '3.48'
     HTTP::Request: '6.00'
@@ -123,7 +123,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::NextVersion:
           first_version: '0.001000'
           version_by_branch: '0'
-          version_regexp: (?^:^(.*)-source$)
+          version_regexp: (?^u:^(.*)-source$)
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
         Dist::Zilla::Role::Version::Sanitize:
@@ -344,14 +344,6 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/BundleDevelSuggests'
       version: '5.019'
     -
-      class: Dist::Zilla::Plugin::Prereqs
-      config:
-        Dist::Zilla::Plugin::Prereqs:
-          phase: develop
-          type: requires
-      name: '@Author::KENTNL/BundleDevelRequires'
-      version: '5.019'
-    -
       class: Dist::Zilla::Plugin::MinimumPerl
       name: '@Author::KENTNL/MinimumPerl'
       version: '1.003'
@@ -363,7 +355,7 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::MakeMaker
       config:
         Dist::Zilla::Role::TestRunner:
-          default_jobs: 10
+          default_jobs: '10'
       name: '@Author::KENTNL/MakeMaker'
       version: '5.019'
     -
@@ -382,7 +374,7 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::RunExtraTests
       config:
         Dist::Zilla::Role::TestRunner:
-          default_jobs: 10
+          default_jobs: '10'
       name: '@Author::KENTNL/RunExtraTests'
       version: '0.022'
     -
@@ -455,7 +447,7 @@ x_Dist_Zilla:
             - dist.ini
             - Changes
           allow_dirty_match:
-            - (?^:^lib/)
+            - (?^u:^lib/)
           changelog: Changes
         Dist::Zilla::Role::Git::Repo:
           repo_root: .
@@ -523,11 +515,12 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled:
           applyto_map:
-            - 'develop.requires = develop.requires'
+            - 'develop.suggests = develop.suggests'
           applyto_phase:
             - develop
           modules:
             - Dist::Zilla::PluginBundle::Author::KENTNL
+            - Dist::Zilla::App::Command::bakeini
       name: '@Author::KENTNL/always_latest_develop_bundle'
       version: '0.002000'
     -
