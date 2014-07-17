@@ -18,11 +18,22 @@ subtest "Parameters for HTTP::Tiny::Mech" => sub {
     package Foo;
     @Foo::ISA = ('WWW::Mechanize');
   }
+  {
+
+    package Bar;
+    @Bar::ISA = ('WWW::Mechanize');
+  }
   my $instance = HTTP::Tiny::Mech->new( mechua => Foo->new(), );
   isa_ok( $instance,         'HTTP::Tiny' );
   isa_ok( $instance,         'HTTP::Tiny::Mech' );
   isa_ok( $instance->mechua, 'WWW::Mechanize' );
   isa_ok( $instance->mechua, 'Foo' );
+  subtest "Set mechua" => sub {
+    $instance->mechua( Bar->new() );
+    isa_ok( $instance->mechua, 'WWW::Mechanize' );
+    isa_ok( $instance->mechua, 'Bar' );
+  };
+
 };
 
 subtest "Parameters for HTTP::Tiny" => sub {

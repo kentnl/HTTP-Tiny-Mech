@@ -22,6 +22,7 @@ perlcritic.rc
 t/00-compile/lib_HTTP_Tiny_Mech_pm.t
 t/00-report-prereqs.t
 t/basic.t
+t/get.t
 weaver.ini
 xt/author/critic.t
 xt/release/cpan-changes.t

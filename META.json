@@ -100,6 +100,7 @@
          "requires" : {
             "ExtUtils::MakeMaker" : "0",
             "File::Spec::Functions" : "0",
+            "HTTP::Response" : "0",
             "HTTP::Tiny" : "0.022",
             "List::Util" : "0",
             "Test::More" : "0.89",
@@ -177,6 +178,7 @@
          "ExtUtils::MakeMaker" : "6.98",
          "File::Spec::Functions" : "3.48",
          "HTTP::Request" : "6.00",
+         "HTTP::Response" : "6.04",
          "HTTP::Tiny" : "0.043",
          "List::Util" : "1.39",
          "Pod::Coverage::TrustPod" : "0.100003",
