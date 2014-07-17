@@ -20,7 +20,6 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "HTTP::Tiny::Mech",
   "PREREQ_PM" => {
-    "Class::Tiny" => 0,
     "HTTP::Request" => 0,
     "HTTP::Tiny" => "0.022",
     "WWW::Mechanize" => 0,
@@ -44,7 +43,6 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
-  "Class::Tiny" => 0,
   "ExtUtils::MakeMaker" => 0,
   "File::Spec::Functions" => 0,
   "HTTP::Request" => 0,

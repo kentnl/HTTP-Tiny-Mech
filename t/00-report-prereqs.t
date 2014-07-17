@@ -108,7 +108,6 @@ my $static_prereqs = do { my $x = {
                     },
        'runtime' => {
                       'requires' => {
-                                      'Class::Tiny' => '0',
                                       'HTTP::Request' => '0',
                                       'HTTP::Tiny' => '0.022',
                                       'WWW::Mechanize' => '0',

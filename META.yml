@@ -24,7 +24,6 @@ provides:
     file: lib/HTTP/Tiny/Mech.pm
     version: '1.000001'
 requires:
-  Class::Tiny: '0'
   HTTP::Request: '0'
   HTTP::Tiny: '0.022'
   WWW::Mechanize: '0'
@@ -41,7 +40,6 @@ x_BuiltWith:
   modules:
     CPAN::Meta: '2.141520'
     CPAN::Meta::Requirements: '2.125'
-    Class::Tiny: '1.000'
     Dist::Zilla::Plugin::Authority: '1.006'
     Dist::Zilla::Plugin::AutoPrereqs: '5.019'
     Dist::Zilla::Plugin::ConfirmRelease: '5.019'
