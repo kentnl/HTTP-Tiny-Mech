@@ -3,26 +3,40 @@ use strict;
 use warnings;
 
 package HTTP::Tiny::Mech;
-$HTTP::Tiny::Mech::VERSION = '1.000000';
+
+our $VERSION = '1.001000';
+
 # ABSTRACT: Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible interface.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
-use Class::Tiny {
-  mechua => sub {
-    require WWW::Mechanize;
-    return WWW::Mechanize->new();
-  },
-};
-
-# This is intentionally after Class::Tiny
-# so that inheritance is
-#
-# HTTP::Tiny::Mech -> [ Class::Tiny::Object , HTTP::Tiny ]
-#
-# So that mechua is parsed by Class::Tiny::Object
-#
 use parent 'HTTP::Tiny';
+
+sub new {
+  my ( $self, %args ) = @_;
+  my ( $mechua, $has_mechua );
+  if ( exists $args{mechua} ) {
+    $has_mechua = 1;
+    $mechua     = delete $args{mechua};
+  }
+  my $instance = $self->SUPER::new(%args);
+  if ($has_mechua) {
+    $instance->{mechua} = $mechua;
+  }
+  return bless $instance, $self;
+}
+
+## no critic (Subroutines::RequireArgUnpacking)
+sub mechua {
+  my ( $self, $new_mechua, $has_new_mechua ) = ( $_[0], $_[1], @_ > 1 );
+  if ($has_new_mechua) {
+    $self->{mechua} = $new_mechua;
+  }
+  return $self->{mechua} if exists $self->{mechua};
+  require WWW::Mechanize;
+  return ( $self->{mechua} = WWW::Mechanize->new() );
+}
+## use critic
 
 
 
@@ -128,7 +142,7 @@ HTTP::Tiny::Mech - Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible in
 
 =head1 VERSION
 
-version 1.000000
+version 1.001000
 
 =head1 SYNOPSIS
 
