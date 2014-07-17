@@ -6,7 +6,7 @@ Release history for HTTP-Tiny-Mech
 
  [Dependencies::Stats]
  - Dependencies changed since 1.000000, see misc/*.deps* for details
- - develop: +1 -1 (suggests: +2 -1)
+ - develop: +3 -3 (suggests: +2 -1)
  - runtime: -1
 
 1.000000 2014-05-10T02:41:46Z
