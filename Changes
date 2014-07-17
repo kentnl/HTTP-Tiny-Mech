@@ -1,12 +1,12 @@
 Release history for HTTP-Tiny-Mech
 
-1.001000 2014-07-17T14:50:23Z
+1.001000 2014-07-17T14:52:43Z
  [00 Major]
  - Recoded construction to work without Class::Tiny, as the logic is much more difficult since 1.000
 
  [Dependencies::Stats]
  - Dependencies changed since 1.000000, see misc/*.deps* for details
- - develop: +1 -1 (suggests: +2 -1)
+ - develop: +3 -3 (suggests: +2 -1)
  - runtime: -1
 
 1.000000 2014-05-10T02:41:46Z
