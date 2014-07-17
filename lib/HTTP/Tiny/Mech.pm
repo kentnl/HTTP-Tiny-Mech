@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 package HTTP::Tiny::Mech;
-$HTTP::Tiny::Mech::VERSION = '1.000000';
+$HTTP::Tiny::Mech::VERSION = '1.000001';
 # ABSTRACT: Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible interface.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
@@ -128,7 +128,7 @@ HTTP::Tiny::Mech - Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible in
 
 =head1 VERSION
 
-version 1.000000
+version 1.000001
 
 =head1 SYNOPSIS
 
