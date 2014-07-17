@@ -27,6 +27,7 @@
          "requires" : {
             "Dist::Zilla::Plugin::Authority" : "1.006",
             "Dist::Zilla::Plugin::AutoPrereqs" : "0",
+            "Dist::Zilla::Plugin::BumpVersionAfterRelease" : "0",
             "Dist::Zilla::Plugin::ConfirmRelease" : "0",
             "Dist::Zilla::Plugin::CopyFilesFromBuild" : "0",
             "Dist::Zilla::Plugin::EOLTests" : "0",
@@ -35,7 +36,6 @@
             "Dist::Zilla::Plugin::Git::CommitBuild" : "0",
             "Dist::Zilla::Plugin::Git::GatherDir" : "0",
             "Dist::Zilla::Plugin::Git::NextRelease" : "0",
-            "Dist::Zilla::Plugin::Git::NextVersion::Sanitized" : "0",
             "Dist::Zilla::Plugin::Git::Tag" : "0",
             "Dist::Zilla::Plugin::GithubMeta" : "0",
             "Dist::Zilla::Plugin::License" : "0",
@@ -49,7 +49,6 @@
             "Dist::Zilla::Plugin::MetaTests" : "0",
             "Dist::Zilla::Plugin::MetaYAML" : "0",
             "Dist::Zilla::Plugin::MinimumPerl" : "0",
-            "Dist::Zilla::Plugin::PkgVersion" : "0",
             "Dist::Zilla::Plugin::PodCoverageTests" : "0",
             "Dist::Zilla::Plugin::PodSyntaxTests" : "0",
             "Dist::Zilla::Plugin::PodWeaver" : "0",
@@ -57,6 +56,7 @@
             "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" : "0",
             "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0",
             "Dist::Zilla::Plugin::ReadmeFromPod" : "0",
+            "Dist::Zilla::Plugin::RewriteVersion::Sanitized" : "0",
             "Dist::Zilla::Plugin::RunExtraTests" : "0",
             "Dist::Zilla::Plugin::Test::CPAN::Changes" : "0",
             "Dist::Zilla::Plugin::Test::Compile::PerFile" : "0",
@@ -110,7 +110,7 @@
    "provides" : {
       "HTTP::Tiny::Mech" : {
          "file" : "lib/HTTP/Tiny/Mech.pm",
-         "version" : "1.000001"
+         "version" : "1.001000"
       }
    },
    "release_status" : "stable",
@@ -125,7 +125,7 @@
          "web" : "https://github.com/kentnl/HTTP-Tiny-Mech"
       }
    },
-   "version" : "1.000001",
+   "version" : "1.001000",
    "x_BuiltWith" : {
       "modules" : {
          "CPAN::Meta" : "2.141520",
@@ -133,6 +133,7 @@
          "Dist::Zilla::App::Command::bakeini" : "0.001001",
          "Dist::Zilla::Plugin::Authority" : "1.006",
          "Dist::Zilla::Plugin::AutoPrereqs" : "5.019",
+         "Dist::Zilla::Plugin::BumpVersionAfterRelease" : "0.002",
          "Dist::Zilla::Plugin::ConfirmRelease" : "5.019",
          "Dist::Zilla::Plugin::CopyFilesFromBuild" : "0.103510",
          "Dist::Zilla::Plugin::EOLTests" : "0.02",
@@ -141,7 +142,6 @@
          "Dist::Zilla::Plugin::Git::CommitBuild" : "2.023",
          "Dist::Zilla::Plugin::Git::GatherDir" : "2.023",
          "Dist::Zilla::Plugin::Git::NextRelease" : "0.002010",
-         "Dist::Zilla::Plugin::Git::NextVersion::Sanitized" : "0.002000",
          "Dist::Zilla::Plugin::Git::Tag" : "2.023",
          "Dist::Zilla::Plugin::GithubMeta" : "0.46",
          "Dist::Zilla::Plugin::License" : "5.019",
@@ -155,7 +155,6 @@
          "Dist::Zilla::Plugin::MetaTests" : "5.019",
          "Dist::Zilla::Plugin::MetaYAML" : "5.019",
          "Dist::Zilla::Plugin::MinimumPerl" : "1.003",
-         "Dist::Zilla::Plugin::PkgVersion" : "5.019",
          "Dist::Zilla::Plugin::PodCoverageTests" : "5.019",
          "Dist::Zilla::Plugin::PodSyntaxTests" : "5.019",
          "Dist::Zilla::Plugin::PodWeaver" : "4.005",
@@ -163,6 +162,7 @@
          "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" : "0.002000",
          "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0.141760",
          "Dist::Zilla::Plugin::ReadmeFromPod" : "0.21",
+         "Dist::Zilla::Plugin::RewriteVersion::Sanitized" : "0.001000",
          "Dist::Zilla::Plugin::RunExtraTests" : "0.022",
          "Dist::Zilla::Plugin::Test::CPAN::Changes" : "0.008",
          "Dist::Zilla::Plugin::Test::Compile::PerFile" : "0.002000",
@@ -214,25 +214,6 @@
          "version" : "5.021001"
       },
       "plugins" : [
-         {
-            "class" : "Dist::Zilla::Plugin::Git::NextVersion::Sanitized",
-            "config" : {
-               "Dist::Zilla::Plugin::Git::NextVersion" : {
-                  "first_version" : "0.001000",
-                  "version_by_branch" : "0",
-                  "version_regexp" : "(?^u:^(.*)-source$)"
-               },
-               "Dist::Zilla::Role::Git::Repo" : {
-                  "repo_root" : "."
-               },
-               "Dist::Zilla::Role::Version::Sanitize" : {
-                  "mantissa" : "6",
-                  "normal_form" : "numify"
-               }
-            },
-            "name" : "@Author::KENTNL/Git::NextVersion::Sanitized",
-            "version" : "0.002000"
-         },
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
             "name" : "@Author::KENTNL/MetaConfig",
@@ -392,9 +373,15 @@
             "version" : "5.019"
          },
          {
-            "class" : "Dist::Zilla::Plugin::PkgVersion",
-            "name" : "@Author::KENTNL/PkgVersion",
-            "version" : "5.019"
+            "class" : "Dist::Zilla::Plugin::RewriteVersion::Sanitized",
+            "config" : {
+               "Dist::Zilla::Role::Version::Sanitize" : {
+                  "mantissa" : "6",
+                  "normal_form" : "numify"
+               }
+            },
+            "name" : "@Author::KENTNL/RewriteVersion::Sanitized",
+            "version" : "0.001000"
          },
          {
             "class" : "Dist::Zilla::Plugin::PodWeaver",
@@ -617,7 +604,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "1.000001-source",
+                  "tag" : "1.001000-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -633,6 +620,11 @@
             "class" : "Dist::Zilla::Plugin::Git::NextRelease",
             "name" : "@Author::KENTNL/Git::NextRelease",
             "version" : "0.002010"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::BumpVersionAfterRelease",
+            "name" : "@Author::KENTNL/BumpVersionAfterRelease",
+            "version" : "0.002"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Commit",
@@ -683,7 +675,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "1.000001",
+                  "tag" : "1.001000",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
