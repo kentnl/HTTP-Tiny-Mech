@@ -10,6 +10,9 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::App::Command::bakeini 0.001001
  - Dist::Zilla::PluginBundle::Author::KENTNL 2.016004
 
+ [Added / test requires]
+ - HTTP::Response
+
  [Removed / develop requires]
  - Dist::Zilla::Plugin::Git::NextVersion::Sanitized
  - Dist::Zilla::Plugin::PkgVersion

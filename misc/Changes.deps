@@ -1,6 +1,9 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
 1.000001
+ [Added / test requires]
+ - HTTP::Response
+
  [Removed / runtime requires]
  - Class::Tiny
 
