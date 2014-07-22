@@ -38,6 +38,10 @@ sub mechua {
 }
 ## use critic
 
+=pod
+
+=encoding utf8
+
 =head1 SYNOPSIS
 
   # Get something that expects an HTTP::Tiny instance
@@ -56,14 +60,12 @@ sub mechua {
     );
   );
 
-=cut
-
 =head1 DESCRIPTION
 
 This code is somewhat poorly documented, and highly experimental.
 
-Its the result of a quick bit of hacking to get L<< C<MetaCPAN::API>|MetaCPAN::API >> working faster
-via the L<< C<WWW::Mechanize::Cached>|WWW::Mechanize::Cached >> module ( and gaining cache persistence via
+It's the result of a quick bit of hacking to get L<< C<MetaCPAN::API>|MetaCPAN::API >> working faster
+via the L<C<WWW::Mechanize::Cached>|WWW::Mechanize::Cached> module ( and gaining cache persistence via
 L<< C<CHI>|CHI >> )
 
 It works so far for this purpose.
@@ -71,14 +73,16 @@ It works so far for this purpose.
 At present, only L</get> and L</request> are implemented, and all other calls
 fall through to a native L<< C<HTTP::Tiny>|HTTP::Tiny >>.
 
-=cut
+=over
 
-=attr C<mechua>
+=item C<mechua>
 
 This class provides one non-standard parameter not in HTTP::Tiny, C<mechua>, which
 is normally an autovivified C<WWW::Mechanize> instance.
 
 You may override this parameter if you want to provide a custom instance of a C<WWW::Mechanize> class.
+
+=back
 
 =cut
 
@@ -102,6 +106,8 @@ sub _wrap_request {
   return $req;
 }
 
+=pod
+
 =head1 WRAPPED METHODS
 
 =head2 get
@@ -114,6 +120,8 @@ sub get {
   my ( $self, $uri, $opts ) = @_;
   return $self->_unwrap_response( $self->mechua->get( $uri, ( $opts ? %{$opts} : () ) ) );
 }
+
+=pod
 
 =head2 request
 
