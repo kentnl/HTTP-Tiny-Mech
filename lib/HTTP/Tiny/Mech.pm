@@ -89,7 +89,7 @@ sub _unwrap_response {
     reason  => $response->message,
     headers => $response->headers,
     success => $response->is_success,
-    content => $response->content,
+    content => $response->decoded_content,
   };
 }
 
