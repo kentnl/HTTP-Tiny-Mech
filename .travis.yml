@@ -15,23 +15,23 @@ matrix:
       env:  STERILIZE_ENV=0
     - perl: "5.16"
       env:  STERILIZE_ENV=0
-    - perl: "5.18"
+    - perl: "5.20"
       env:  STERILIZE_ENV=0
-    - perl: "5.19"
+    - perl: "5.21"
       env:  STERILIZE_ENV=0
     - perl: "5.8"
       env:  STERILIZE_ENV=1
     - perl: "5.10"
       env:  STERILIZE_ENV=1
-    - perl: "5.18"
+    - perl: "5.20"
       env:  STERILIZE_ENV=1
-    - perl: "5.19"
+    - perl: "5.21"
       env:  STERILIZE_ENV=1
-    - perl: "5.19"
+    - perl: "5.21"
       env: STERILIZE_ENV=0 DEVELOPER_DEPS=1
-    - perl: "5.19"
+    - perl: "5.21"
       env: STERILIZE_ENV=0 RELEASE_TESTING=1 AUTHOR_TESTING=1
-    - perl: "5.19"
+    - perl: "5.21"
       env: STERILIZE_ENV=0 COVERAGE_TESTING=1
 before_install:
   - perlbrew list
