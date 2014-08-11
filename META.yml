@@ -48,6 +48,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Git::Check: '2.023'
     Dist::Zilla::Plugin::Git::Commit: '2.023'
     Dist::Zilla::Plugin::Git::CommitBuild: '2.023'
+    Dist::Zilla::Plugin::Git::Contributors: '0.004'
     Dist::Zilla::Plugin::Git::GatherDir: '2.023'
     Dist::Zilla::Plugin::Git::NextRelease: '0.002011'
     Dist::Zilla::Plugin::Git::Tag: '2.023'
@@ -81,7 +82,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::TestRelease: '5.020'
     Dist::Zilla::Plugin::Twitter: '0.025'
     Dist::Zilla::Plugin::UploadToCPAN: '5.020'
-    Dist::Zilla::PluginBundle::Author::KENTNL: '2.016008'
+    Dist::Zilla::PluginBundle::Author::KENTNL: '2.017000'
     ExtUtils::MakeMaker: '6.98'
     File::Spec: '3.48'
     HTTP::Request: '6.00'
@@ -155,6 +156,15 @@ x_Dist_Zilla:
             uname_call: uname
       name: '@Author::KENTNL/MetaData::BuiltWith'
       version: '1.001000'
+    -
+      class: Dist::Zilla::Plugin::Git::Contributors
+      config:
+        Dist::Zilla::Plugin::Git::Contributors:
+          include_authors: '0'
+          include_releaser: '0'
+          order_by: name
+      name: '@Author::KENTNL/Git::Contributors'
+      version: '0.004'
     -
       class: Dist::Zilla::Plugin::Git::GatherDir
       config:

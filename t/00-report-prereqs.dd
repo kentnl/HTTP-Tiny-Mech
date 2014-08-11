@@ -18,6 +18,7 @@ do { my $x = {
                                       'Dist::Zilla::Plugin::Git::Check' => '0',
                                       'Dist::Zilla::Plugin::Git::Commit' => '0',
                                       'Dist::Zilla::Plugin::Git::CommitBuild' => '0',
+                                      'Dist::Zilla::Plugin::Git::Contributors' => '0',
                                       'Dist::Zilla::Plugin::Git::GatherDir' => '0',
                                       'Dist::Zilla::Plugin::Git::NextRelease' => '0',
                                       'Dist::Zilla::Plugin::Git::Tag' => '0',
@@ -60,7 +61,7 @@ do { my $x = {
                                     },
                       'suggests' => {
                                       'Dist::Zilla::App::Command::bakeini' => '0.001001',
-                                      'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.016008'
+                                      'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.017000'
                                     }
                     },
        'runtime' => {
