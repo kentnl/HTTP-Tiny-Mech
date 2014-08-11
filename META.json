@@ -76,7 +76,7 @@
          },
          "suggests" : {
             "Dist::Zilla::App::Command::bakeini" : "0.001001",
-            "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.016007"
+            "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.016008"
          }
       },
       "runtime" : {
@@ -159,7 +159,7 @@
          "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" : "0.002000",
          "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0.142180",
          "Dist::Zilla::Plugin::ReadmeFromPod" : "0.21",
-         "Dist::Zilla::Plugin::RewriteVersion::Sanitized" : "0.001001",
+         "Dist::Zilla::Plugin::RewriteVersion::Sanitized" : "0.001002",
          "Dist::Zilla::Plugin::RunExtraTests" : "0.022",
          "Dist::Zilla::Plugin::Test::CPAN::Changes" : "0.008",
          "Dist::Zilla::Plugin::Test::Compile::PerFile" : "0.002001",
@@ -170,7 +170,7 @@
          "Dist::Zilla::Plugin::TestRelease" : "5.020",
          "Dist::Zilla::Plugin::Twitter" : "0.025",
          "Dist::Zilla::Plugin::UploadToCPAN" : "5.020",
-         "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.016007",
+         "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.016008",
          "ExtUtils::MakeMaker" : "6.98",
          "File::Spec" : "3.48",
          "HTTP::Request" : "6.00",
@@ -377,7 +377,7 @@
                }
             },
             "name" : "@Author::KENTNL/RewriteVersion::Sanitized",
-            "version" : "0.001001"
+            "version" : "0.001002"
          },
          {
             "class" : "Dist::Zilla::Plugin::PodWeaver",
