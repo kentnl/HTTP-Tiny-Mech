@@ -48,7 +48,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Git::Check: '2.023'
     Dist::Zilla::Plugin::Git::Commit: '2.023'
     Dist::Zilla::Plugin::Git::CommitBuild: '2.023'
-    Dist::Zilla::Plugin::Git::Contributors: '0.004'
+    Dist::Zilla::Plugin::Git::Contributors: '0.005'
     Dist::Zilla::Plugin::Git::GatherDir: '2.023'
     Dist::Zilla::Plugin::Git::NextRelease: '0.002011'
     Dist::Zilla::Plugin::Git::Tag: '2.023'
@@ -164,7 +164,7 @@ x_Dist_Zilla:
           include_releaser: '0'
           order_by: name
       name: '@Author::KENTNL/Git::Contributors'
-      version: '0.004'
+      version: '0.005'
     -
       class: Dist::Zilla::Plugin::Git::GatherDir
       config:
