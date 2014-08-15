@@ -1,6 +1,6 @@
 Release history for HTTP-Tiny-Mech
 
-1.001001 2014-08-15T03:10:23Z
+1.001001 2014-08-15T06:11:34Z
  [00 Trivial]
  - no code changes.
  - metdata updates
@@ -20,7 +20,7 @@ Release history for HTTP-Tiny-Mech
  - POD moved around so generated source has less whitespace at the top.
 
  [Tests]
- - Test::ReportVersions was updated automatically, and is now more useful.
+ - Test::ReportPrereqs was updated automatically, and is now more useful.
 
 1.001000 2014-07-17T15:22:19Z
  [00 Major]
