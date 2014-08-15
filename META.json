@@ -1,8 +1,7 @@
 {
    "abstract" : "Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible interface.",
    "author" : [
-      "Kent Fredric <kentnl@cpan.org>",
-      "Pedro Melo <melo@simplicidade.org>"
+      "Kent Fredric <kentnl@cpan.org>"
    ],
    "dynamic_config" : 0,
    "generated_by" : "Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.142060",
@@ -829,5 +828,8 @@
          "version" : "5.020"
       }
    },
-   "x_authority" : "cpan:KENTNL"
+   "x_authority" : "cpan:KENTNL",
+   "x_contributors" : [
+      "Pedro Melo <melo@simplicidade.org>"
+   ]
 }

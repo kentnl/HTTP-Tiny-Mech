@@ -11,7 +11,7 @@ use ExtUtils::MakeMaker ;
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible interface.",
-  "AUTHOR" => "Kent Fredric <kentnl\@cpan.org>, Pedro Melo <melo\@simplicidade.org>",
+  "AUTHOR" => "Kent Fredric <kentnl\@cpan.org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
   },
