@@ -56,10 +56,9 @@ Interface should be the same as it is with ["get" in HTTP::Tiny](https://metacpa
 
 Interface should be the same as it is with ["request" in HTTP::Tiny](https://metacpan.org/pod/HTTP::Tiny#request)
 
-# AUTHORS
+# AUTHOR
 
-- Kent Fredric <kentnl@cpan.org>
-- Pedro Melo <melo@simplicidade.org>
+Kent Fredric <kentnl@cpan.org>
 
 # COPYRIGHT AND LICENSE
 

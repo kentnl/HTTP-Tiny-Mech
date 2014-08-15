@@ -1,6 +1,9 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 1.001001
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::Git::Contributors 0.006
+
  [Added / test requires]
  - File::Spec
 
@@ -8,7 +11,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - ExtUtils::MakeMaker 6.30 → 0
 
  [Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL 2.016004 → 2.016007
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.016004 → 2.017001
 
  [Changed / test recommends]
  - CPAN::Meta 0 → 2.120900
