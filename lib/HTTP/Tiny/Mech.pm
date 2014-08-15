@@ -38,41 +38,6 @@ sub mechua {
 }
 ## use critic
 
-=head1 SYNOPSIS
-
-  # Get something that expects an HTTP::Tiny instance
-  # to work with HTTP::Mechanize under the hood.
-  #
-  my $thing => ThingThatExpectsHTTPTiny->new(
-    ua => HTTP::Tiny::Mech->new()
-  );
-
-  # Get something that expects HTTP::Tiny
-  # to work via WWW::Mechanize::Cached
-  #
-  my $thing => ThingThatExpectsHTTPTiny->new(
-    ua => HTTP::Tiny::Mech->new(
-      mechua => WWW::Mechanize::Cached->new( )
-    );
-  );
-
-=cut
-
-=head1 DESCRIPTION
-
-This code is somewhat poorly documented, and highly experimental.
-
-Its the result of a quick bit of hacking to get L<< C<MetaCPAN::API>|MetaCPAN::API >> working faster
-via the L<< C<WWW::Mechanize::Cached>|WWW::Mechanize::Cached >> module ( and gaining cache persistence via
-L<< C<CHI>|CHI >> )
-
-It works so far for this purpose.
-
-At present, only L</get> and L</request> are implemented, and all other calls
-fall through to a native L<< C<HTTP::Tiny>|HTTP::Tiny >>.
-
-=cut
-
 =attr C<mechua>
 
 This class provides one non-standard parameter not in HTTP::Tiny, C<mechua>, which
@@ -127,5 +92,40 @@ sub request {
   my $response = $self->mechua->request($req);
   return $self->_unwrap_response($response);
 }
+
+=head1 SYNOPSIS
+
+  # Get something that expects an HTTP::Tiny instance
+  # to work with HTTP::Mechanize under the hood.
+  #
+  my $thing => ThingThatExpectsHTTPTiny->new(
+    ua => HTTP::Tiny::Mech->new()
+  );
+
+  # Get something that expects HTTP::Tiny
+  # to work via WWW::Mechanize::Cached
+  #
+  my $thing => ThingThatExpectsHTTPTiny->new(
+    ua => HTTP::Tiny::Mech->new(
+      mechua => WWW::Mechanize::Cached->new( )
+    );
+  );
+
+=cut
+
+=head1 DESCRIPTION
+
+This code is somewhat poorly documented, and highly experimental.
+
+Its the result of a quick bit of hacking to get L<< C<MetaCPAN::API>|MetaCPAN::API >> working faster
+via the L<< C<WWW::Mechanize::Cached>|WWW::Mechanize::Cached >> module ( and gaining cache persistence via
+L<< C<CHI>|CHI >> )
+
+It works so far for this purpose.
+
+At present, only L</get> and L</request> are implemented, and all other calls
+fall through to a native L<< C<HTTP::Tiny>|HTTP::Tiny >>.
+
+=cut
 
 1;
