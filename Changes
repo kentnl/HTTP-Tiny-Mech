@@ -1,9 +1,11 @@
 Release history for HTTP-Tiny-Mech
 
-1.001001 2014-08-15T03:03:55Z
+1.001001 2014-08-15T03:10:23Z
  [00 Trivial]
- - update metadata re: contributors
- - update test::reportversions
+ - no code changes.
+ - metdata updates
+ - whitespace adjustments.
+ - test tweaks.
 
  [Dependencies::Stats]
  - Dependencies changed since 1.001000, see misc/*.deps* for details
@@ -13,6 +15,9 @@ Release history for HTTP-Tiny-Mech
 
  [Metadata]
  - 1x Contributor is now recognised as contributor instead of an author
+
+ [Misc]
+ - POD moved around so generated source has less whitespace at the top.
 
  [Tests]
  - Test::ReportVersions was updated automatically, and is now more useful.
