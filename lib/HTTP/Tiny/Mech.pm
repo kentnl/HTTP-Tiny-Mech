@@ -4,7 +4,7 @@ use warnings;
 
 package HTTP::Tiny::Mech;
 
-our $VERSION = '1.001001';
+our $VERSION = '1.001002';
 
 # ABSTRACT: Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible interface.
 
