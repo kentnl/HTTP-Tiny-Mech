@@ -3,7 +3,7 @@ NAME
     compatible interface.
 
 VERSION
-    version 1.001001
+    version 1.001002
 
 SYNOPSIS
       # Get something that expects an HTTP::Tiny instance

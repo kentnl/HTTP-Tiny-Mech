@@ -34,7 +34,7 @@ my %WriteMakefileArgs = (
     "HTTP::Tiny" => "0.022",
     "Test::More" => "0.89"
   },
-  "VERSION" => "1.001001",
+  "VERSION" => "1.001002",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }
