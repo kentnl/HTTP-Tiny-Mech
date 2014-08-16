@@ -4,7 +4,7 @@ use warnings;
 
 package HTTP::Tiny::Mech;
 
-our $VERSION = '1.001000';
+our $VERSION = '1.001001';
 
 # ABSTRACT: Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible interface.
 
@@ -37,41 +37,6 @@ sub mechua {
   return ( $self->{mechua} = WWW::Mechanize->new() );
 }
 ## use critic
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -128,6 +93,41 @@ sub request {
   return $self->_unwrap_response($response);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 1;
 
 __END__
@@ -142,7 +142,7 @@ HTTP::Tiny::Mech - Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible in
 
 =head1 VERSION
 
-version 1.001000
+version 1.001001
 
 =head1 SYNOPSIS
 
@@ -194,19 +194,9 @@ Interface should be the same as it is with L<HTTP::Tiny/get>.
 
 Interface should be the same as it is with L<HTTP::Tiny/request>
 
-=head1 AUTHORS
-
-=over 4
-
-=item *
+=head1 AUTHOR
 
 Kent Fredric <kentnl@cpan.org>
-
-=item *
-
-Pedro Melo <melo@simplicidade.org>
-
-=back
 
 =head1 COPYRIGHT AND LICENSE
 

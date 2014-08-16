@@ -3,7 +3,7 @@ NAME
     compatible interface.
 
 VERSION
-    version 1.001000
+    version 1.001001
 
 SYNOPSIS
       # Get something that expects an HTTP::Tiny instance
@@ -49,10 +49,8 @@ WRAPPED METHODS
   request
     Interface should be the same as it is with "request" in HTTP::Tiny
 
-AUTHORS
-    *   Kent Fredric <kentnl@cpan.org>
-
-    *   Pedro Melo <melo@simplicidade.org>
+AUTHOR
+    Kent Fredric <kentnl@cpan.org>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.

@@ -1,5 +1,27 @@
 Release history for HTTP-Tiny-Mech
 
+1.001001 2014-08-15T06:11:34Z
+ [00 Trivial]
+ - no code changes.
+ - metdata updates
+ - whitespace adjustments.
+ - test tweaks.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 1.001000, see misc/*.deps* for details
+ - configure: ↓1
+ - develop: +1 (suggests: ↑1)
+ - test: +1 -3 (recommends: ↑1 -1)
+
+ [Metadata]
+ - 1x Contributor is now recognised as contributor instead of an author
+
+ [Misc]
+ - POD moved around so generated source has less whitespace at the top.
+
+ [Tests]
+ - Test::ReportPrereqs was updated automatically, and is now more useful.
+
 1.001000 2014-07-17T15:22:19Z
  [00 Major]
  - Recoded construction to work without Class::Tiny, as the logic is much more difficult since 1.000
