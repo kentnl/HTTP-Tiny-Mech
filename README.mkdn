@@ -4,7 +4,7 @@ HTTP::Tiny::Mech - Wrap a WWW::Mechanize instance in an HTTP::Tiny compatible in
 
 # VERSION
 
-version 1.001001
+version 1.001002
 
 # SYNOPSIS
 
