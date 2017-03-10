@@ -23,7 +23,7 @@ name: HTTP-Tiny-Mech
 provides:
   HTTP::Tiny::Mech:
     file: lib/HTTP/Tiny/Mech.pm
-    version: '1.001002'
+    version: '1.001003'
 requires:
   HTTP::Request: '0'
   HTTP::Tiny: '0.022'
@@ -36,4 +36,4 @@ resources:
   bugtracker: https://github.com/kentnl/HTTP-Tiny-Mech/issues
   homepage: https://github.com/kentnl/HTTP-Tiny-Mech
   repository: https://github.com/kentnl/HTTP-Tiny-Mech.git
-version: '1.001002'
+version: '1.001003'

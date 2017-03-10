@@ -1,5 +1,7 @@
 Release history for HTTP-Tiny-Mech
 
+1.001003 2017-03-10T13:29:10Z 509fe97
+
 1.001002 2017-03-10T13:22:58Z 91e962a
  - Bugfix: Avoid test failures with -Ddefault_inc_excludes_dot
  - Minor test refactoring
