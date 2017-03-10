@@ -1,2 +1,3 @@
-.build
-HTTP-Tiny-Mech-*
+/.build
+/HTTP-Tiny-Mech-*
+/tmp/
