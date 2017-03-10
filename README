@@ -1,60 +1,45 @@
-NAME
-    HTTP::Tiny::Mech - Wrap a WWW::Mechanize instance in an HTTP::Tiny
-    compatible interface.
+HTTP::Tiny::Mech
 
-VERSION
-    version 1.001001
+This code is somewhat poorly documented, and highly experimental.
 
-SYNOPSIS
-      # Get something that expects an HTTP::Tiny instance
-      # to work with HTTP::Mechanize under the hood.
-      #
-      my $thing => ThingThatExpectsHTTPTiny->new(
-        ua => HTTP::Tiny::Mech->new()
-      );
+Its the result of a quick bit of hacking to get "MetaCPAN::API" working
+faster via the "WWW::Mechanize::Cached" module ( and gaining cache
+persistence via "CHI" )
 
-      # Get something that expects HTTP::Tiny
-      # to work via WWW::Mechanize::Cached
-      #
-      my $thing => ThingThatExpectsHTTPTiny->new(
-        ua => HTTP::Tiny::Mech->new(
-          mechua => WWW::Mechanize::Cached->new( )
-        );
-      );
+It works so far for this purpose.
 
-DESCRIPTION
-    This code is somewhat poorly documented, and highly experimental.
+At present, only "get" and "request" are implemented, and all other
+calls fall through to a native "HTTP::Tiny".
 
-    Its the result of a quick bit of hacking to get "MetaCPAN::API" working
-    faster via the "WWW::Mechanize::Cached" module ( and gaining cache
-    persistence via "CHI" )
+POD ERRORS
 
-    It works so far for this purpose.
+Hey! The above document had some coding errors, which are explained
+below:
 
-    At present, only "get" and "request" are implemented, and all other
-    calls fall through to a native "HTTP::Tiny".
+Around line 7:
+    Non-ASCII character seen before =encoding in '( and'. Assuming
+    CP1252
 
-ATTRIBUTES
-  "mechua"
-    This class provides one non-standard parameter not in HTTP::Tiny,
-    "mechua", which is normally an autovivified "WWW::Mechanize" instance.
+INSTALLATION
 
-    You may override this parameter if you want to provide a custom instance
-    of a "WWW::Mechanize" class.
+This is a Perl module distribution. It should be installed with whichever
+tool you use to manage your installation of Perl, e.g. any of
 
-WRAPPED METHODS
-  get
-    Interface should be the same as it is with "get" in HTTP::Tiny.
+  cpanm .
+  cpan  .
+  cpanp -i .
 
-  request
-    Interface should be the same as it is with "request" in HTTP::Tiny
+Consult http://www.cpan.org/modules/INSTALL.html for further instruction.
+Should you wish to install this module manually, the procedure is
 
-AUTHOR
-    Kent Fredric <kentnl@cpan.org>
+  perl Makefile.PL
+  make
+  make test
+  make install
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
-    This is free software; you can redistribute it and/or modify it under
-    the same terms as the Perl 5 programming language system itself.
+This software is copyright (c) 2017 by Kent Fredric <kentnl@cpan.org>.
 
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
