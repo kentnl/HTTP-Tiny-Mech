@@ -2,6 +2,7 @@ Release history for HTTP-Tiny-Mech
 
 {{$NEXT}}
  - Bugfix: Avoid test failures with -Ddefault_inc_excludes_dot
+ - Minor test refactoring
 
  [Dependencies::Stats]
  - Dependencies changed since 1.001001, see misc/*.deps* for details
