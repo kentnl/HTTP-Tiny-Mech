@@ -117,6 +117,7 @@
             "HTTP::Response" : "0",
             "HTTP::Tiny" : "0.022",
             "Test::More" : "0",
+            "lib" : "0",
             "perl" : "5.006"
          }
       }

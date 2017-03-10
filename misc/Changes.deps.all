@@ -24,6 +24,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Test::More 0.96
 
  [Added / test requires]
+ - lib
  - perl 5.006
 
  [Changed / configure recommends]

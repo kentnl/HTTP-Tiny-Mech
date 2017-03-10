@@ -7,28 +7,8 @@ use Test::More;
 
 use HTTP::Tiny::Mech;
 use HTTP::Tiny 0.022;
-
-{
-
-  package FakeUA;
-  our $AUTOLOAD;
-
-  sub AUTOLOAD {
-    my $program = $AUTOLOAD;
-    $program =~ s/.*:://;
-
-    my ( $self, @args ) = @_;
-    push @{ $self->{calls} }, [ $program, @args ];
-    require HTTP::Response;
-    return HTTP::Response->new();
-  }
-
-  sub new {
-    my ( $self, @args ) = @_;
-    bless { args => \@args, calls => [] }, $self;
-  }
-
-}
+use lib 't/get';
+use FakeUA;
 
 my $instance = HTTP::Tiny::Mech->new( mechua => FakeUA->new(), );
 isa_ok( $instance,         'HTTP::Tiny' );

@@ -29,7 +29,8 @@ my %WriteMakefileArgs = (
     "File::Spec" => 0,
     "HTTP::Response" => 0,
     "HTTP::Tiny" => "0.022",
-    "Test::More" => 0
+    "Test::More" => 0,
+    "lib" => 0
   },
   "VERSION" => "1.001002",
   "test" => {
@@ -46,6 +47,7 @@ my %FallbackPrereqs = (
   "HTTP::Tiny" => "0.022",
   "Test::More" => 0,
   "WWW::Mechanize" => 0,
+  "lib" => 0,
   "parent" => 0,
   "strict" => 0,
   "warnings" => 0

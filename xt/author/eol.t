@@ -13,6 +13,7 @@ my @files = (
     't/00-report-prereqs.t',
     't/basic.t',
     't/get.t',
+    't/get/FakeUA.pm',
     't/mech-params.t',
     't/tiny-params.t'
 );
